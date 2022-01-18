@@ -17,9 +17,7 @@ public class Arrays2 {
                 System.out.println(arr[row][column]+"");
             }
         }
-
          */
-
         //enhanced for loop output
         for (int[] a : array) {
             System.out.println(Arrays.toString(a));
