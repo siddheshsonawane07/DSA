@@ -22,7 +22,10 @@ public class TwoDimensionalArrays {
                 {4,5} //1st index
                 {6,7,8,9} //2nd index -> arr2D[2] = {6,7,8,9}
            }
+
+           memory consumption = rows X columns X data types
         */
+
         Scanner in = new Scanner(System.in);
 
         int[][] arr = new int[3][3];
@@ -37,7 +40,8 @@ public class TwoDimensionalArrays {
         }
 
         //         output in 2D array
-     /*
+
+
         for (int row = 0; row < arr.length; row++) {
             //for each column in every row
             for (int column = 0; column < arr[row].length; column++) {
@@ -45,7 +49,7 @@ public class TwoDimensionalArrays {
             }
             System.out.println();
         }
-        */
+
 
         //output in to String method
 
@@ -53,13 +57,12 @@ public class TwoDimensionalArrays {
         for (int row = 0; row < arr.length; row++) {
             System.out.println(Arrays.toString(arr[row]));
         }
-
         */
+
         //enhanced for loop
-
-        for(int[] a : arr){
-            System.out.println(Arrays.toString(a));
-
-        }
+//        for(int[] a : arr){
+//            System.out.println(Arrays.toString(a));
+//
+//        }
     }
 }
