@@ -6,36 +6,64 @@ import java.util.Scanner;
 public class SpiralMatrix {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter number of rows: ");
-        int r = sc.nextInt();
-        System.out.print("Enter number of columns: ");
-        int c = sc.nextInt();
-        int[][] matrix = new int[r][c];
+       int r = sc.nextInt();
+       int c = sc.nextInt();
 
-        for(int i = 0; i < r; i++){
-            for (int j = 0; j < c; j++) {
-                matrix[i][j] = sc.nextInt();
-                }
+       int[][] matrix = new int[r][c];
+
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++) {
+                matrix[row][col] = sc.nextInt();
+            }
         }
 
-        System.out.println("Matrix output in Spiral Representation");
+        int rmin = 0;
+        int rmax = matrix.length - 1 ;
+        int cmin = 0;
+        int cmax = matrix[0].length - 1;
 
-        int row_start = 0;
-        int row_end =  r-1;
-        int col_start = 0;
-        int col_end = c-1;
+        int tne = r * c;
+        int count = 0;
 
+        while(count<tne){
 
-        while (row_start<=row_end && col_start<=col_end) {
-            for (int i = col_start; i <= col_end; i++) {
-                System.out.println(matrix[row_start][i]);
+            if(count<tne) {
+                for (int i = rmin; i <= rmax; i++) {
+                    System.out.println(matrix[i][cmin]);
+                    count++;
+                }
             }
-            row_start++;
+            cmin++;
 
-            for (int i = row_start; i <= row_end; i++) {
-                System.out.println(matrix[i][col_end]);
+            if(count<tne) {
+                for (int i = cmin; i <= cmax; i++) {
+                    System.out.println(matrix[rmax][i]);
+                    count++;
+                }
             }
-            col_end--;
+            rmax--;
+
+            if(count<tne) {
+                for (int i = rmax; i >= rmin; i--) {
+                    System.out.println(matrix[i][cmax]);
+                    count++;
+                }
+            }
+            cmax--;
+
+            if(count<tne) {
+                for (int i = cmax; i >= cmin; i--) {
+                    System.out.println(matrix[rmin][i]);
+                    count++;
+                }
+            }
+            rmin++;
+
+        }
+
+        for (int [] a : matrix){
+            System.out.println(Arrays.toString(a));
+
         }
     }
 }
