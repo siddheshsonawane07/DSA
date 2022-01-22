@@ -2,7 +2,6 @@ package Bit_Manipulation;
 
 public class bit_operations {
     public static void main(String[] args) {
-        //There is no actual subtraction performed by the compiler 2's compliment of a number is added with the other number.
         //Get Bit
         /*
         Get the 3rd bit(position = 2) of number n = 0101
