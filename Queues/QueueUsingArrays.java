@@ -49,6 +49,8 @@ public class QueueUsingArrays {
         q1.enqueue(1);
         q1.enqueue(0);
         q1.get_front();
+        q1.dequeue();
+        q1.get_front();
 
     }
 
