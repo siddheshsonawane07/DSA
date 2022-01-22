@@ -1,4 +1,4 @@
-package Basics;
+package Bit_Manipulation;
 
 public class Operators {
     public static void main(String[] args) {
@@ -59,6 +59,9 @@ public class Operators {
         a>>2
         0101
         0001
+
+        Also, for any number << 1, number is divided by 2
+             , for any number >> 1, number is multiply by 2
 
         Assignment Operators
         =
