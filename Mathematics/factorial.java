@@ -12,9 +12,9 @@ public class factorial {
             return (n * factorial1(n - 1));
         }
     }
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
+    static void factorial(int n){
+        Scanner in = new Scanner(System.in);
         int number = in.nextInt();
         int fact = 1;
 
@@ -23,8 +23,13 @@ public class factorial {
         }
         System.out.println("Factorial of "+number+" is: "+fact);
 
+    }
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
         int number1= in.nextInt();
         int fact1 = factorial1(number1);
-        System.out.println("Factorial of "+number+" is: "+fact);
+        System.out.println("Factorial of "+number1+" is: "+fact1);
+
     }
 }
