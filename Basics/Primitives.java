@@ -8,7 +8,5 @@ public class Primitives {
         double large_decimal_numbers = 456454.1322132;
         long large_integer_values = 1234567890L;
         boolean check = false;
-
-
     }
 }
