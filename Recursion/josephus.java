@@ -1,15 +1,29 @@
 package Recursion;
 /*
-There are n people standing in a circle waiting to be executed. The counting out begins at some point in the circle and proceeds around the circle in a fixed direction. In each step, a certain number of people are skipped and the next person is executed. The elimination proceeds around the circle (which is becoming smaller and smaller as the executed people are removed), until only the last person remains, who is given freedom. Given the total number of persons n and a number k which indicates that k-1 persons are skipped and kth person is killed in circle. The task is to choose the place in the initial circle so that you are the last one remaining and so survive.
-For example, if n = 5 and k = 2, then the safe position is 3. Firstly, the person at position 2 is killed, then person at position 4 is killed, then person at position 1 is killed. Finally, the person at position 5 is killed. So the person at position 3 survives.
-If n = 7 and k = 3, then the safe position is 4. The persons at positions 3, 6, 2, 7, 5, 1 are killed in order, and person at position 4 survives.
+Formulating recursive solution:
 
+function(n, k) -> returns the winner if there are n players and kth players is killed in each step
+function(n-1, k) -> return the winner if there are n-1 players and kth players is killed in each step
+and so on.
 
-The problem has following recursive structure.
+If the number of player is n then its 0 to n-1
+If the number of player is n-1 then its 0 to n-2
 
-  josephus(n, k) = (josephus(n - 1, k) + k-1) % n + 1
-  josephus(1, k) = 1
-After the first person (kth from beginning) is killed, n-1 persons are left. So we call josephus(n – 1, k) to get the position with n-1 persons. But the position returned by josephus(n – 1, k) will consider the position starting from k%n + 1. So, we must make adjustments to the position returned by josephus(n – 1, k).
+	function(n, k){
+		int winner = find(n-1, k)
+		// map the winner from the group of n-1 players to group of n players
+		// Let's take an example of n = 6, and k = 3
+	}
+n = 6, k = 3
+So the 6 players are from 0 to n - 1, i.e 0 1 2 3 4 5
+At first round 3rd players gets killed i.e player 2 will be killed.
+So, the remaining players are 0 1 ~ 3 4 5
+
+Now, we'll solve the problem for size 5 with players 0 1 2 3 4 and we'll map (k + 1)th player as a first player in new problem.
+0 1 2 3 4 5 -> 3 4 - 0 1 2
+So if our subproblem of size n-1 return x as a winner and original winner y can be derived by using
+
+y = (x + k) % n
 */
 public class josephus {
 
