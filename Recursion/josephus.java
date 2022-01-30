@@ -36,7 +36,7 @@ public class josephus {
     }
 
     public static void main(String[] args) {
-        int ans = findWinner(5,2)+1;
+        int ans = findWinner(5,2);
         System.out.println(ans);
     }
 }
