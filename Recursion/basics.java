@@ -1,4 +1,4 @@
-package Searching;
+package Recursion;
 
 public class basics {
 
