@@ -1,8 +1,5 @@
 package Arrays;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Arrays1 {
     public static void main(String[] args) {
         //DSA ARRAYS
