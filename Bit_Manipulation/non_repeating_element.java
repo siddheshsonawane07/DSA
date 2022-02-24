@@ -20,7 +20,7 @@ res = 3
 
 import java.util.Scanner;
 
-public class que_2 {
+public class non_repeating_element {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);

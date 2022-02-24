@@ -18,7 +18,7 @@ res = 3 ^ 2
 
 */
 
-public class que_3 {
+public class two_non_repeating_element {
     public static void UniqueNumbers2(int[] arr, int n)
     {
         int sum = 0;

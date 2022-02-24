@@ -11,7 +11,7 @@ It changes the least significant bit to "0"
 
 import java.util.Scanner;
 
-public class que_1 {
+public class no_of_bits {
     public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
 
