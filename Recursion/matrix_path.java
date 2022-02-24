@@ -9,13 +9,13 @@ find the total number of ways from which you can travel from 1 to 9
 condition is that we have to go straight and down
 */
 
-public class que1 {
+public class matrix_path {
 
-    static int count (int m, int n) {
-        if(m==1 || n==1){
+    static int count (int r, int c) {
+        if(r==1 || c==1){
             return 1;
         }
-        return count(n-1,m)+count(m,n-1);
+        return count(r-1,c)+count(r,c-1);
     }
 
     public static void main(String[] args) {
