@@ -45,14 +45,14 @@ public class MergeSort {
             k++;
         }
 
-        /* Copy remaining elements of L[] if any */
+      // Copy remaining elements of L[] if any
         while (i < n1) {
             arr[k] = Left[i];
             i++;
             k++;
         }
 
-        /* Copy remaining elements of R[] if any */
+        // Copy remaining elements of R[] if any
         while (j < n2) {
             arr[k] = Right[j];
             j++;
