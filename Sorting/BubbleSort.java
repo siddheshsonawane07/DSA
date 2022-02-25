@@ -34,7 +34,7 @@ public class BubbleSort {
                 }
             }
             //if u did not swap for a particular value of i, it means that the array is sorted and hence stop the program
-            if(!swapped){
+            if(swapped==false){
                 break;
             }
         }
