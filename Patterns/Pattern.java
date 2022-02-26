@@ -124,8 +124,7 @@ public class Pattern {
 //        1
 
         for (int row = 0; row <=n; row++) {
-            int totalCols = row;
-            for (int col = 0; col <= totalCols; col++) {
+            for (int col = 0; col <= row; col++) {
                 System.out.print(" "+ row);
             }
             System.out.println();
