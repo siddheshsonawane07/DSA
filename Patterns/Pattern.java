@@ -115,16 +115,13 @@ public class Pattern {
 
     public static void pattern7(int n){
 
-//        1
-//        1 2
-//        1 2 3
-//        1 2 3 4
-//        1 2 3
-//        1 2
-//        1
+//      1
+//      2 2
+//      3 3 3
 
-        for (int row = 0; row <=n; row++) {
-            for (int col = 0; col <= row; col++) {
+
+        for (int row = 1; row <=n; row++) {
+            for (int col = 1; col <= row; col++) {
                 System.out.print(" "+ row);
             }
             System.out.println();
