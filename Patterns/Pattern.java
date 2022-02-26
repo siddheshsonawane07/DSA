@@ -111,12 +111,31 @@ public class Pattern {
             }
             System.out.println();
         }
+    }
+
+    public static void pattern7(int n){
+
+//        1
+//        1 2
+//        1 2 3
+//        1 2 3 4
+//        1 2 3
+//        1 2
+//        1
+
+        for (int row = 0; row <=n; row++) {
+            int totalCols = row;
+            for (int col = 0; col <= totalCols; col++) {
+                System.out.print(" "+ row);
+            }
+            System.out.println();
         }
+    }
 
 
 
     public static void main(String[] args) {
-        pattern6(4);
+        pattern7(4);
 
     }
 }
