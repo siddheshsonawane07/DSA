@@ -104,24 +104,20 @@ public class Pattern {
 //        * *
 //        *
 
-        for (int row = 1; row <2*n; row++) {
-            // for every row, run the column
-            for (int col = 1; col <= row; col++) {
-                System.out.print("*");
+        for (int row = 0; row <2*n; row++) {
+            int totalCols = row > n ? (2 * n) - row: row;
+            for (int col = 0; col < totalCols; col++) {
+                System.out.print("* ");
                 }
             }
             //when one complete row is completed, we need to add a new line
             System.out.println();
-
         }
 
 
 
     public static void main(String[] args) {
-
         pattern6(4);
-
-
 
     }
 }
