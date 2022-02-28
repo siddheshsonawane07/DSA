@@ -186,41 +186,6 @@ public class SingleLinkedList {
     }
 
     public static void main(String[] args) {
-        SingleLinkedList list1 = new SingleLinkedList();
-        list1.InsertFirst(1);
-        list1.InsertLast(5);
-        list1.InsertAt(1,4);
-        list1.InsertAt(1,6);
-        list1.printList();
-        list1.DeleteFirst();
-        list1.DeleteLast();
-        System.out.println();
-        list1.printList();
-        list1.InsertAt(1,10);
-        list1.InsertAt(1,11);
-        System.out.println();
-        list1.printList();
-        System.out.println();
-        System.out.println(list1.size);
-        list1.DeleteAtIndex(1);
-        list1.printList();
-        list1.DeleteAtIndex(1);
-        System.out.println();
-        list1.printList();
-        list1.search(5);
-        System.out.println();
-        System.out.println(list1.size);
-
-        SingleLinkedList list2 = new SingleLinkedList();
-        list2.InsertFirst(1);
-        list2.InsertLast(10);
-        list2.InsertAt(1,2);
-        list2.InsertAt(2,3);
-        list2.InsertAt(3,4);
-        list2.InsertAt(4,5);
-        list2.InsertAt(5,6);
-        list2.printList();
-        System.out.println();
 
 
     }
