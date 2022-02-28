@@ -10,7 +10,7 @@ public class SingleLinkedList {
         this.size = 0;
     }
 
-    class Node{
+    static class Node{
         int data;
         Node next;
 
