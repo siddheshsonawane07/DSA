@@ -2,6 +2,7 @@ package LinkedList;
 
 public class DoubleLinkedList {
     Node head;
+    Node tail;
     public int size;
 
     DoubleLinkedList(){
@@ -64,6 +65,42 @@ public class DoubleLinkedList {
         size++;
     }
 
+    public void DeleteFirst(){
+        head = head.next;
+        head.prev = null;
+    }
+
+    public void DeleteLast(){
+        if(size<=1){
+            DeleteFirst();
+        }
+        Node SecondLast = get(size - 2);
+        tail = SecondLast;
+        tail.next = null;
+        size--;
+    }
+
+    //Deleting a node at particular index
+    public void DeleteAtIndex(int index){
+        if(index == 0){
+            DeleteFirst();
+        }
+        if(index == size - 1){
+            DeleteLast();
+        }
+        Node previous = get(index -1);
+        previous.next.prev = previous;
+        previous.next = previous.next.next;
+        size--;
+    }
+
+    public Node get(int index) {
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
     public void printList() {
         Node node = head;
         Node last = null;
@@ -74,19 +111,32 @@ public class DoubleLinkedList {
         }
         System.out.println("END");
 
-        System.out.println("Print in reverse");
-        while (last != null) {
-            System.out.print(last.data + " -> ");
-            last = last.prev;
-        }
-        System.out.println("START");
+//        System.out.println("Print in reverse");
+//        while (last != null) {
+//            System.out.print(last.data + " -> ");
+//            last = last.prev;
+//        }
+//        System.out.println("START");
     }
-
 
     public int size(){
         return size;
     }
 
     public static void main(String[] args) {
+        DoubleLinkedList list = new DoubleLinkedList();
+
+        list.AddFirst(5);
+        list.AddLast(10);
+        list.InsertAt(1,6);
+        list.InsertAt(2,7);
+        list.InsertAt(3,8);
+//        list.printList();
+        list.DeleteFirst();
+        list.printList();
+        list.DeleteLast();
+        list.printList();
+        list.DeleteAtIndex(1);
+        list.printList();
     }
 }
