@@ -5,6 +5,7 @@ public class DoubleLinkedList {
     public int size;
 
     DoubleLinkedList(){
+
         this.size = 0;
     }
 
@@ -87,16 +88,5 @@ public class DoubleLinkedList {
     }
 
     public static void main(String[] args) {
-        DoubleLinkedList list = new DoubleLinkedList();
-        list.AddFirst(1);
-        list.AddLast(3);
-        list.printList();
-        list.InsertAt(1,4);
-        System.out.println();
-        list.InsertAt(1,5);
-        list.printList();
-        list.InsertAt(2,10);
-        list.InsertAt(3,11);
-        list.printList();
     }
 }

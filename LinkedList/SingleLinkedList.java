@@ -186,7 +186,12 @@ public class SingleLinkedList {
     }
 
     public static void main(String[] args) {
-
+        SingleLinkedList list = new SingleLinkedList();
+        list.InsertFirst(1);
+        list.InsertLast(4);
+        list.InsertAt(1,2);
+        list.InsertAt(2,3);
+        list.printList();
 
     }
 
