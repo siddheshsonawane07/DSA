@@ -43,14 +43,6 @@ public class QueueUsingArrays {
 
     public static void main(String[] args) {
         Queue q1 = new Queue(5);
-        q1.enqueue(4);
-        q1.enqueue(3);
-        q1.enqueue(2);
-        q1.enqueue(1);
-        q1.enqueue(0);
-        q1.get_front();
-        q1.dequeue();
-        q1.get_front();
 
     }
 
