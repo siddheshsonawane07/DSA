@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class CyclicSort {
     public static void main(String[] args) {
-        //the elements in the array should be continuous but can be in not proper sequence
+        //the elements in the array should be continuous
         int [] arr = {3,5,2,1,4,6};
         cyclic(arr);
         System.out.println(Arrays.toString(arr));
