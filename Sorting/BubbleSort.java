@@ -11,11 +11,11 @@ public class BubbleSort {
         //worst case: O(n*n) = array is sorted in descending
 
         int [] arr = {5,4,2,4,8,4};
-        bubble(arr);
+        bubble_sort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
-    static void bubble(int[] arr){
+    static void bubble_sort(int[] arr){
         //run the steps (n-1) times
 
         boolean swapped;
