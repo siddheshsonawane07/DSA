@@ -1,4 +1,4 @@
-package Trees;
+package Trees.BST;
 
 public class BST {
     static class Node{
