@@ -4,8 +4,8 @@ Maximum number of nodes at level i is 2 * i
 Maximum number of nodes in a tree with height h is 2^h-1
 */
 
-
 import java.util.Scanner;
+
 
 class Node {
     Node left, right;
@@ -65,7 +65,28 @@ public class BT {
         }
         postOrder(root.left);
         postOrder(root.right);
-        System.out.print(root.data + "");
+        System.out.print(root.data + " ");
+    }
+
+    static int height(Node root){
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(height(root.left),height(root.right)) + 1;
+    }
+
+    static int size(Node root){
+        if(root==null){
+            return 0;
+        }
+        return size(root.left) + size(root.right) + 1;
+    }
+
+    static int max(Node root){
+        if(root == null){
+            return 0;
+        }
+        return Math.max(root.data, Math.max(max(root.left),max(root.right))) + 1;
     }
 
     public static void main(String[] args) {
@@ -73,11 +94,20 @@ public class BT {
         sc = new Scanner(System.in);
 
         Node root = createTree();
-        System.out.println("inorder: ");
+        System.out.print("inorder: ");
         inOrder(root);
-        System.out.println("preorder: ");
+        System.out.print("preorder: ");
         preOrder(root);
-        System.out.println("postorder: ");
+        System.out.print("postorder: ");
         postOrder(root);
+
+        int height = height(root);
+        System.out.println(height);
+
+        int size = size(root);
+        System.out.println(size);
+
+        int max = max(root);
+        System.out.println(max);
     }
 }
