@@ -84,9 +84,9 @@ public class BT {
 
     static int max(Node root){
         if(root == null){
-            return 0;
+            return Integer.MIN_VALUE;
         }
-        return Math.max(root.data, Math.max(max(root.left),max(root.right))) + 1;
+        return Math.max(root.data, Math.max(max(root.left), max(root.right)));
     }
 
     public static void main(String[] args) {
@@ -101,13 +101,14 @@ public class BT {
         System.out.print("postorder: ");
         postOrder(root);
 
+        System.out.println();
         int height = height(root);
-        System.out.println(height);
+        System.out.println("height of tree is " + height);
 
         int size = size(root);
-        System.out.println(size);
+        System.out.println("size of tree is " + size);
 
         int max = max(root);
-        System.out.println(max);
+        System.out.println("max in tree is " + max);
     }
 }
