@@ -4,6 +4,8 @@ Maximum number of nodes at level i is 2 * i
 Maximum number of nodes in a tree with height h is 2^h-1
 */
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Scanner;
 
 
@@ -96,6 +98,7 @@ public class BT {
         return Math.min(root.data, Math.min(min(root.left), min(root.right)));
     }
 
+    //level order traversal using bruteforce approach
     static void printLevelOrder(Node root) {
         int h = height(root);
         for (int i = 0; i <= h; i++) {
@@ -108,12 +111,38 @@ public class BT {
             return;
         }
         if (i == 1) {
-            System.out.println(root.data + " ");
+            System.out.print(root.data + " ");
         } else if (i > 1) {
             printCurrentLevel(root.left, i - 1);
             printCurrentLevel(root.right, i - 1);
         }
     }
+
+    //level order traversal using queues
+    // remove print add
+    static void printLevelTraversal(Node node) {
+        Queue<Node> queue = new ArrayDeque<>();
+        queue.add(node);
+
+        while (queue.size() > 0) {
+            int count = queue.size();
+            for (int i = 0; i < count; i++) {
+                node = queue.remove();
+                System.out.print(node.data + " ");
+
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -140,7 +169,13 @@ public class BT {
         int min = min(root);
         System.out.println("min in tree is " + min);
 
-        System.out.print("Level order traversal bruteforce approach  ");
+        System.out.println("Level order traversal bruteforce approach: ");
         printLevelOrder(root);
+
+        System.out.println();
+
+        System.out.println("Level order traversal using queue: ");
+        printLevelTraversal(root);
+
     }
 }
