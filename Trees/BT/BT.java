@@ -82,11 +82,37 @@ public class BT {
         return size(root.left) + size(root.right) + 1;
     }
 
-    static int max(Node root){
-        if(root == null){
+    static int max(Node root) {
+        if (root == null) {
             return Integer.MIN_VALUE;
         }
         return Math.max(root.data, Math.max(max(root.left), max(root.right)));
+    }
+
+    static int min(Node root) {
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+        return Math.min(root.data, Math.min(min(root.left), min(root.right)));
+    }
+
+    static void printLevelOrder(Node root) {
+        int h = height(root);
+        for (int i = 0; i <= h; i++) {
+            printCurrentLevel(root, i);
+        }
+    }
+
+    static void printCurrentLevel(Node root, int i) {
+        if (root == null) {
+            return;
+        }
+        if (i == 1) {
+            System.out.println(root.data + " ");
+        } else if (i > 1) {
+            printCurrentLevel(root.left, i - 1);
+            printCurrentLevel(root.right, i - 1);
+        }
     }
 
     public static void main(String[] args) {
@@ -110,5 +136,11 @@ public class BT {
 
         int max = max(root);
         System.out.println("max in tree is " + max);
+
+        int min = min(root);
+        System.out.println("min in tree is " + min);
+
+        System.out.print("Level order traversal bruteforce approach  ");
+        printLevelOrder(root);
     }
 }
