@@ -77,6 +77,7 @@ public class BT {
         return Math.max(height(root.left),height(root.right)) + 1;
     }
 
+    //total number of nodes
     static int size(Node root){
         if(root==null){
             return 0;
@@ -96,6 +97,17 @@ public class BT {
             return Integer.MAX_VALUE;
         }
         return Math.min(root.data, Math.min(min(root.left), min(root.right)));
+    }
+
+    static int sum(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        int lsm = sum(root.left);
+        int rsm = sum(root.right);
+
+        int tsm = lsm + rsm + root.data;
+        return tsm;
     }
 
     //level order traversal using bruteforce approach
@@ -168,6 +180,9 @@ public class BT {
 
         int min = min(root);
         System.out.println("min in tree is " + min);
+
+        int sum = sum(root);
+        System.out.println("sum of the nodes " + sum);
 
         System.out.println("Level order traversal bruteforce approach: ");
         printLevelOrder(root);
