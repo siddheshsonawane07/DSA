@@ -171,6 +171,20 @@ public class BT {
         leftview(node.right, level + 1);
     }
 
+    static void rightview(Node node, int level) {
+        if (node == null) {
+            return;
+        }
+        if (max < level) {
+            System.out.print(" " + node.data);
+            max = level;
+        }
+
+        rightview(node.right, level + 1);
+        rightview(node.left, level + 1);
+
+    }
+
 
     public static void main(String[] args) {
 
