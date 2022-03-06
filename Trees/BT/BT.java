@@ -5,6 +5,7 @@ Maximum number of nodes in a tree with height h is 2^h-1
 */
 
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -153,6 +154,36 @@ public class BT {
             System.out.println();
         }
 
+    }
+
+    static void levelorder(Node root) {
+        if (root == null) {
+            return;
+        }
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+
+        while (!q.isEmpty()) {
+            Node currNode = q.remove();
+            if (currNode == null) {
+                System.out.println();
+                if (q.isEmpty()) {
+                    break;
+                } else {
+                    q.add(null);
+                }
+            } else {
+                System.out.print(currNode.data + " ");
+                if (currNode.left != null) {
+                    q.add(currNode.left);
+                }
+                if (currNode.right != null) {
+                    q.add(currNode.right);
+                }
+            }
+        }
     }
 
 
