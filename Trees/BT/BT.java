@@ -153,6 +153,18 @@ public class BT {
 
     }
 
+    static void leftview(Node node, List<Integer> left, int currDepth) {
+        if (node == null) {
+            return;
+        }
+        if (currDepth == left.size()) {
+            left.add(node.data);
+        }
+        leftview(node.left, left, currDepth + 1);
+        leftview(node.right, left, currDepth + 1);
+
+    }
+
 
     //root right left
     static void rightview(Node node, List<Integer> right, int currDepth) {
@@ -174,12 +186,14 @@ public class BT {
         Node root = createTree();
         System.out.print("inorder: ");
         inOrder(root);
+        System.out.println();
         System.out.print("preorder: ");
         preOrder(root);
+        System.out.println();
         System.out.print("postorder: ");
         postOrder(root);
-
         System.out.println();
+
         int height = height(root);
         System.out.println("height of tree is " + height);
 
@@ -206,8 +220,16 @@ public class BT {
         System.out.println();
 
         List<Integer> right = new ArrayList<Integer>();
+        System.out.println("right view of binary tree");
         rightview(root, right, 0);
-        System.out.println(right.toString());
+        System.out.println(right);
+
+        System.out.println();
+        
+        List<Integer> left = new ArrayList<Integer>();
+        System.out.println("left view of binary tree");
+        leftview(root, left, 0);
+        System.out.println(left);
 
 
     }
