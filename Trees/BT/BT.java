@@ -4,10 +4,7 @@ Maximum number of nodes at level i is 2 * i
 Maximum number of nodes in a tree with height h is 2^h-1
 */
 
-import java.util.ArrayDeque;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 
 class Node {
@@ -156,33 +153,17 @@ public class BT {
 
     }
 
-    static int max = 0;
 
-    static void leftview(Node node, int level) {
-        if (node == null)
-            return;
-
-        if (max < level) {
-            System.out.print(" " + node.data);
-            max = level;
-        }
-
-        leftview(node.left, level + 1);
-        leftview(node.right, level + 1);
-    }
-
-    static void rightview(Node node, int level) {
+    //root right left
+    static void rightview(Node node, List<Integer> right, int currDepth) {
         if (node == null) {
             return;
         }
-        if (max < level) {
-            System.out.print(" " + node.data);
-            max = level;
+        if (currDepth == right.size()) {
+            right.add(node.data);
         }
-
-        rightview(node.right, level + 1);
-        rightview(node.left, level + 1);
-
+        rightview(node.right, right, currDepth + 1);
+        rightview(node.left, right, currDepth + 1);
     }
 
 
@@ -221,6 +202,13 @@ public class BT {
 
         System.out.println("Level order traversal using queue: ");
         printLevelTraversal(root);
+
+        System.out.println();
+
+        List<Integer> right = new ArrayList<Integer>();
+        rightview(root, right, 0);
+        System.out.println(right.toString());
+
 
     }
 }
