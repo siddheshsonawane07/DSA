@@ -179,6 +179,8 @@ public class BT {
         rightview(node.left, right, currDepth + 1);
     }
 
+    //balance tree
+
 
     public static void main(String[] args) {
 
