@@ -75,7 +75,25 @@ public class BT {
         return Math.max(height(root.left), height(root.right)) + 1;
     }
 
-    //balance tree
+    //check if the tree is balanced or not
+    static int dfsHeight(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftH = dfsHeight(root.left);
+        if (leftH == -1) {
+            return -1;
+        }
+        int rightH = dfsHeight(root.right);
+        if (rightH == -1) {
+            return -1;
+        }
+
+        if (Math.abs(leftH - rightH) > 1) {
+            return -1;
+        }
+        return Math.max(leftH, rightH) + 1;
+    }
 
 
     //total number of nodes
@@ -200,6 +218,9 @@ public class BT {
 
         int height = height(root);
         System.out.println("height of tree is " + height);
+
+        int dfs = dfsHeight(root);
+        System.out.println("is it a balanced tree: " + dfs);
 
         int size = size(root);
         System.out.println("size of tree is " + size);
