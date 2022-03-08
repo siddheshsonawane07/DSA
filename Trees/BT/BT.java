@@ -153,6 +153,7 @@ public class BT {
 
     }
 
+    //root left right
     static void leftview(Node node, List<Integer> left, int currDepth) {
         if (node == null) {
             return;
