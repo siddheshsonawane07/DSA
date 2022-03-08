@@ -68,16 +68,19 @@ public class BT {
         System.out.print(root.data + " ");
     }
 
-    static int height(Node root){
+    static int height(Node root) {
         if (root == null) {
             return 0;
         }
-        return Math.max(height(root.left),height(root.right)) + 1;
+        return Math.max(height(root.left), height(root.right)) + 1;
     }
 
+    //balance tree
+
+
     //total number of nodes
-    static int size(Node root){
-        if(root==null){
+    static int size(Node root) {
+        if (root == null) {
             return 0;
         }
         return size(root.left) + size(root.right) + 1;
@@ -178,8 +181,6 @@ public class BT {
         rightview(node.right, right, currDepth + 1);
         rightview(node.left, right, currDepth + 1);
     }
-
-    //balance tree
 
 
     public static void main(String[] args) {
