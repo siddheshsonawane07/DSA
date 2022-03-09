@@ -181,7 +181,6 @@ public class BT {
         boolean ltr = true;
 
         Stack<Node> childStack = new Stack<>();
-        int level = 1;
 
         while (mainStack.size() > 0) {
             node = mainStack.pop();
