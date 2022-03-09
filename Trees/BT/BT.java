@@ -23,7 +23,7 @@ public class BT {
     static Node createTree() {
         Node root;
 
-        System.out.println("Enter data");
+        System.out.print("Enter data:  ");
         int data = sc.nextInt();
 
         if (data == -1) {
