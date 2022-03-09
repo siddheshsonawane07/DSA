@@ -174,6 +174,46 @@ public class BT {
 
     }
 
+    //zigzag traversal or spiral traversal
+    static void printSpiralTraversal(Node node) {
+        Stack<Node> mainStack = new Stack<>();
+        mainStack.push(node);
+        boolean ltr = true;
+
+        Stack<Node> childStack = new Stack<>();
+        int level = 1;
+
+        while (mainStack.size() > 0) {
+            node = mainStack.pop();
+            System.out.print(node.data + " ");
+
+            if (ltr) {
+                if (node.left != null) {
+                    childStack.push(node.left);
+                }
+
+                if (node.right != null) {
+                    childStack.push(node.right);
+                }
+            } else {
+                if (node.right != null) {
+                    childStack.push(node.right);
+                }
+                if (node.left != null) {
+                    childStack.push(node.left);
+                }
+            }
+
+            if (mainStack.isEmpty()) {
+                ltr = false;
+                Stack<Node> temp = mainStack;
+                mainStack = childStack;
+                childStack = temp;
+            }
+        }
+    }
+
+
     //root left right
     static void leftview(Node node, List<Integer> left, int currDepth) {
         if (node == null) {
@@ -244,13 +284,19 @@ public class BT {
 
         System.out.println();
 
+        System.out.println("Zigzag traversal using queue: ");
+        printSpiralTraversal(root);
+
+        System.out.println();
+
+
         List<Integer> right = new ArrayList<Integer>();
         System.out.println("right view of binary tree");
         rightview(root, right, 0);
         System.out.println(right);
 
         System.out.println();
-        
+
         List<Integer> left = new ArrayList<Integer>();
         System.out.println("left view of binary tree");
         leftview(root, left, 0);
