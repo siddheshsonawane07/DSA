@@ -264,6 +264,9 @@ public class BT {
         printRightBoundary(node.right);
     }
 
+    //vertical traversal
+    
+
     //root left right
     static void leftview(Node node, List<Integer> left, int currDepth) {
         if (node == null) {
@@ -276,7 +279,6 @@ public class BT {
         leftview(node.right, left, currDepth + 1);
 
     }
-
 
     //root right left
     static void rightview(Node node, List<Integer> right, int currDepth) {
@@ -331,8 +333,6 @@ public class BT {
 
         System.out.println("Level order traversal using queue: ");
         printLevelTraversal(root);
-
-        System.out.println();
 
         System.out.println("Zigzag traversal using queue: ");
         printSpiralTraversal(root);
