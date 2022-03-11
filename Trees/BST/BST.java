@@ -1,25 +1,51 @@
 package Trees.BST;
 
 public class BST {
-    static class Node{
+    static class Node {
         int data;
         Node left;
         Node right;
+
         Node(int data) {
             this.data = data;
         }
-
     }
 
-    static boolean search(Node root, int data) {
+    static Node insert(Node root, int data) {
         if (root == null) {
+            return new Node(data);
+        }
+        Node cur = root;
+        while (true) {
+            if (cur.data <= data) {
+                if (cur.right != null) {
+                    cur = cur.right;
+                } else {
+                    cur.right = new Node(data);
+                    break;
+                }
+            } else {
+                if (cur.left != null) {
+                    cur = cur.left;
+                } else {
+                    cur.left = new Node(data);
+                    break;
+                }
+            }
+        }
+
+        return root;
+    }
+
+    static boolean search(Node node, int data) {
+        if (node == null) {
             return false;
-        } else if (root.data == data) {
+        } else if (node.data == data) {
             return true;
-        } else if (data <= root.data) {
-            return search(root.left, data);
+        } else if (data <= node.data) {
+            return search(node.left, data);
         } else {
-            return search(root.right, data);
+            return search(node.right, data);
         }
     }
 
@@ -60,6 +86,7 @@ public class BST {
     }
 
     public static void main(String[] args) {
+        Node root = new Node(1);
 
     }
 }
