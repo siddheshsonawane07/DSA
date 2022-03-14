@@ -122,8 +122,6 @@ public class BST {
 
     public static void main(String[] args) {
         Node root = new Node(1);
-        insert(root, 2);
-        insert(root, 4);
-        level_order_traversal(root);
+
     }
 }
