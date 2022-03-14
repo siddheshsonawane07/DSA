@@ -1,5 +1,10 @@
 package Trees.BST;
 
+import Queues.QueueUsingArrays;
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class BST {
     static class Node {
         int data;
@@ -11,11 +16,11 @@ public class BST {
         }
     }
 
-    static Node insert(Node root, int data) {
-        if (root == null) {
-            return new Node(data);
+    static void insert(Node node, int data) {
+        if (node == null) {
+            System.out.println("Node cannot be null");
         }
-        Node cur = root;
+        Node cur = node;
         while (true) {
             if (cur.data <= data) {
                 if (cur.right != null) {
@@ -33,8 +38,6 @@ public class BST {
                 }
             }
         }
-
-        return root;
     }
 
     static boolean search(Node node, int data) {
@@ -85,8 +88,42 @@ public class BST {
         return floor;
     }
 
+    static int height(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return Math.max(height(root.left), height(root.right));
+    }
+
+    static void level_order_traversal(Node root) {
+        if (root == null) {
+            System.out.println("Tree is empty");
+        }
+        Queue<Node> queue = new ArrayDeque<>();
+        queue.add(root);
+
+        //remove print add
+        while (queue.size() > 0) {
+            int count = queue.size();
+            for (int i = 0; i < count; i++) {
+                root = queue.remove();
+                System.out.println(root.data + " ");
+            }
+            if (root.left != null) {
+                queue.add(root.left);
+            }
+
+            if (root.right != null) {
+                queue.add(root.right);
+            }
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         Node root = new Node(1);
-
+        insert(root, 2);
+        insert(root, 4);
+        level_order_traversal(root);
     }
 }
