@@ -126,13 +126,22 @@ public class BST {
 
     public static void main(String[] args) {
         BST bst = new BST();
-        bst.insert(5);
-        bst.insert(4);
-        bst.insert(6);
         bst.insert(10);
-        bst.insert(11);
-        bst.insert(8);
+        bst.insert(17);
         bst.insert(7);
+        bst.insert(8);
+        bst.insert(6);
+        bst.insert(12);
+        bst.insert(20);
+        bst.level_order_traversal(bst.root);
+        int min = bst.findMin(bst.root);
+        System.out.println("Minimum number: " + min);
+        int max = bst.findMax(bst.root);
+        System.out.println("Maximum number: " + max);
+        System.out.println("Inorder: ");
+        bst.inorder(bst.root);
+        System.out.println();
+        bst.delete(bst.root, 6);
         bst.level_order_traversal(bst.root);
     }
 
