@@ -1,25 +1,40 @@
 package Trees.BST;
 
-
-import Queues.QueueUsingArrays;
-
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Scanner;
+
+class Node {
+    int data;
+    Node left;
+    Node right;
+
+    Node(int data) {
+        this.data = data;
+    }
+
+}
 
 public class BST {
 
-    static class Node {
-        int data;
-        Node left;
-        Node right;
+    static Scanner sc = null;
 
-        Node(int data) {
-            this.data = data;
+    static Node createRoot() {
+        Node root;
+
+        System.out.print("Enter Data: ");
+        int data = sc.nextInt();
+
+        if (data == -1) {
+            return null;
         }
 
+        root = new Node(data);
+
+        return root;
     }
 
-    public Node insert(Node root, int data) {
+    static Node insert(Node root, int data) {
         if (root == null) {
             return new Node(data);
         } else if (data <= root.data) {
@@ -30,7 +45,7 @@ public class BST {
         return root;
     }
 
-    public boolean search(Node root, int data) {
+    static boolean search(Node root, int data) {
         if (root == null) {
             return false;
         } else if (root.data == data) {
@@ -42,7 +57,7 @@ public class BST {
         }
     }
 
-    public int findMin(Node root) {
+    static int findMin(Node root) {
         while (root.left != null) {
             root = root.left;
         }
@@ -50,14 +65,14 @@ public class BST {
 
     }
 
-    public int findMax(Node root) {
+    static int findMax(Node root) {
         while (root.right != null) {
             root = root.right;
         }
         return root.data;
     }
 
-    public Node delete(Node root, int data) {
+    public static Node delete(Node root, int data) {
         if (root == null) {
             return null;
         } else if (data < root.data) {
@@ -117,7 +132,9 @@ public class BST {
 
 
     public static void main(String[] args) {
-        BST tree = new BST();
+        sc = new Scanner(System.in);
+        Node root = createRoot();
+        
     }
 
 }
