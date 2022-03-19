@@ -1,6 +1,10 @@
 package Trees.BST;
 
-import java.util.Scanner;
+
+import Queues.QueueUsingArrays;
+
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 public class BST {
 
@@ -76,37 +80,44 @@ public class BST {
         return root;
     }
 
+    static void inorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data + " ");
+        inorder(root.right);
+    }
+
+    //remove print add
+    static void level_order_traversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        Queue<Node> queue = new ArrayDeque<>();
+        queue.add(node);
+
+        while (queue.size() > 0) {
+            int count = queue.size();
+            for (int i = 0; i < count; i++) {
+                node = queue.remove();
+                System.out.println(node.data + " ");
+
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
 
     public static void main(String[] args) {
         BST tree = new BST();
-        Node root = null;
-        root = tree.insert(root, 15);
-        root = tree.insert(root, 10);
-        root = tree.insert(root, 20);
-        root = tree.insert(root, 25);
-        root = tree.insert(root, 8);
-        root = tree.insert(root, 12);
-
-        root = tree.delete(root, 10);
-
-
-        int num;
-        System.out.println("Enter the number to search");
-        Scanner sc = new Scanner(System.in);
-        num = sc.nextInt();
-
-        if (tree.search(root, num)) {
-            System.out.println("Element found");
-        } else {
-            System.out.println("Element not found");
-        }
-
-
-        System.out.println("Min element is " + tree.findMin(root));
-
-        System.out.println("Max element is " + tree.findMax(root));
-
-
     }
 
 }
