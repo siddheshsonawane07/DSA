@@ -2,39 +2,32 @@ package Trees.BST;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
-import java.util.Scanner;
 
-class Node {
-    int data;
-    Node left;
-    Node right;
-
-    Node(int data) {
-        this.data = data;
-    }
-
-}
 
 public class BST {
 
-    static Scanner sc = null;
+    class Node {
+        int data;
+        Node left;
+        Node right;
 
-    static Node createRoot() {
-        Node root;
-
-        System.out.print("Enter Data: ");
-        int data = sc.nextInt();
-
-        if (data == -1) {
-            return null;
+        Node(int data) {
+            this.data = data;
         }
 
-        root = new Node(data);
-
-        return root;
     }
 
-    static Node insert(Node root, int data) {
+    Node root;
+
+    BST() {
+        root = null;
+    }
+
+    void insert(int data) {
+        root = insert(root, data);
+    }
+
+    Node insert(Node root, int data) {
         if (root == null) {
             return new Node(data);
         } else if (data <= root.data) {
@@ -45,7 +38,7 @@ public class BST {
         return root;
     }
 
-    static boolean search(Node root, int data) {
+    boolean search(Node root, int data) {
         if (root == null) {
             return false;
         } else if (root.data == data) {
@@ -57,7 +50,7 @@ public class BST {
         }
     }
 
-    static int findMin(Node root) {
+    int findMin(Node root) {
         while (root.left != null) {
             root = root.left;
         }
@@ -65,14 +58,14 @@ public class BST {
 
     }
 
-    static int findMax(Node root) {
+    int findMax(Node root) {
         while (root.right != null) {
             root = root.right;
         }
         return root.data;
     }
 
-    public static Node delete(Node root, int data) {
+    Node delete(Node root, int data) {
         if (root == null) {
             return null;
         } else if (data < root.data) {
@@ -95,7 +88,7 @@ public class BST {
         return root;
     }
 
-    static void inorder(Node root) {
+    void inorder(Node root) {
         if (root == null) {
             return;
         }
@@ -105,7 +98,7 @@ public class BST {
     }
 
     //remove print add
-    static void level_order_traversal(Node node) {
+    void level_order_traversal(Node node) {
         if (node == null) {
             return;
         }
@@ -116,7 +109,7 @@ public class BST {
             int count = queue.size();
             for (int i = 0; i < count; i++) {
                 node = queue.remove();
-                System.out.println(node.data + " ");
+                System.out.print(node.data + " ");
 
                 if (node.left != null) {
                     queue.add(node.left);
@@ -132,9 +125,15 @@ public class BST {
 
 
     public static void main(String[] args) {
-        sc = new Scanner(System.in);
-        Node root = createRoot();
-        
+        BST bst = new BST();
+        bst.insert(5);
+        bst.insert(4);
+        bst.insert(6);
+        bst.insert(10);
+        bst.insert(11);
+        bst.insert(8);
+        bst.insert(7);
+        bst.level_order_traversal(bst.root);
     }
 
 }
