@@ -142,6 +142,7 @@ public class BST {
         bst.inorder(bst.root);
         System.out.println();
         bst.delete(bst.root, 6);
+        System.out.println("After Deletion");
         bst.level_order_traversal(bst.root);
     }
 
