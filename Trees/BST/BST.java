@@ -14,7 +14,6 @@ public class BST {
         Node(int data) {
             this.data = data;
         }
-
     }
 
     Node root;
@@ -144,6 +143,8 @@ public class BST {
         bst.delete(bst.root, 6);
         System.out.println("After Deletion");
         bst.level_order_traversal(bst.root);
+        boolean search = bst.search(bst.root, 20);
+        System.out.println("is data present ? " + search);
     }
 
 }
