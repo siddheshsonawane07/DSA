@@ -1,15 +1,17 @@
 package Collections_Framework;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
 
-public class LinkedHashSetss {
+import java.util.Set;
+import java.util.TreeSet;
+
+public class TreeSetss {
+
     public static void main(String[] args) {
         //same as hashsets
-        //additional properties of linked list
-        //maintains an order in which the elements are added
+        //additional properties of binary search tree
+        //also the time complexities changes from O(1) to O(logn) due to bst
 
-        Set<Integer> set = new LinkedHashSet<>();
+        Set<Integer> set = new TreeSet<>();
 
         set.add(1);
         set.add(2);
