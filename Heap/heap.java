@@ -18,12 +18,11 @@ public class heap {
         height of the tree is logn
     */
 
-    static void heapify(int[] heap, int i) {
-        int size = heap.length;
-        int left = 2 * i;
-        int right = (2 * i) + 1;
-
+    static void heapify(int[] heap, int size, int i) {
         int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+
 
         if (left < size && heap[left] > heap[largest]) {
             largest = left;
@@ -34,18 +33,26 @@ public class heap {
         }
 
         if (largest != i) {
-            int temp = heap[largest];
-            heap[largest] = heap[i];
-            heap[i] = heap[temp];
+            int temp = heap[i];
+            heap[i] = heap[largest];
+            heap[largest] = temp;
 
-            heapify(heap, i);
+            heapify(heap, size, i);
         }
-        return;
     }
 
-    static void print(int[] heap) {
-        for (Integer i : heap) {
-            System.out.print(i + " ");
+    static void buildheap(int[] heap, int size) {
+
+        int startIndex = (size / 2) - 1;
+
+        for (int i = startIndex; i >= 0; i--) {
+            heapify(heap, size, i);
+        }
+    }
+
+    static void print(int[] heap, int size) {
+        for (int i = 0; i < size; i++) {
+            System.out.print(heap[i] + " ");
         }
         System.out.println();
     }
@@ -54,9 +61,8 @@ public class heap {
 
         int[] arr = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
         int size = arr.length;
-
-        heapify(arr, size);
-        print(arr);
+        buildheap(arr, size);
+        print(arr, size);
 
 
     }
