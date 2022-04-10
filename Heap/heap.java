@@ -13,8 +13,8 @@ public class heap {
         heap is created to represent it as array
         if the current node's index is i, then to calculate:
         parent's index = (i/2)
-        left child = 2 * i
-        right child = 2 * i + 1
+        left child = 2 * i + 1
+        right child = 2 * i + 2
         height of the tree is logn
     */
 
@@ -37,7 +37,7 @@ public class heap {
             heap[i] = heap[largest];
             heap[largest] = temp;
 
-            heapify(heap, size, i);
+            heapify(heap, size, largest);
         }
     }
 
