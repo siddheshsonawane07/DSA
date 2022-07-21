@@ -1,4 +1,8 @@
+
+
 package Arrays;
+
+import java.util.*;
 
 public class Arrays1 {
     public static void main(String[] args) {
@@ -6,7 +10,16 @@ public class Arrays1 {
         // syntax
         // datatype[] variable_name = new datatype[size];
 
-        //int[] rnos = new int[5];
+        int[] arr = {5, 4, 3, 2, 1};
+
+        //find minimum and max in array
+
+        //approach 1
+        Arrays.sort(arr);
+        int min = arr[0];
+        int max = arr[arr.length - 1];
+        System.out.println("minimum number is " + min);
+        System.out.println("maximum number is " + max);
 
         // the data types of all the elements in the array should be same.
         // new is used to create an object and allocate the memory in the heap
@@ -18,7 +31,8 @@ public class Arrays1 {
         //direct array
         //int [] arr = {1,2,3,4,5,6}
         //java does not have continuous memory locations
-        //primitive data types cannot be broken into smaller data types
+        //primitive data types cannot be broken into smaller data type
+
 
     }
 }
