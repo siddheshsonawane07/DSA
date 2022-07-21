@@ -13,7 +13,7 @@ public class matrix_multiplication {
 
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-                System.out.println("Enter matrix for " + i + j);
+                System.out.println("Enter value for " + i + j);
                 matrix[i][j] = in.nextInt();
             }
         }
@@ -21,7 +21,7 @@ public class matrix_multiplication {
         return matrix;
     }
 
-    static int[][] multiply(int[][] arr1, int[][] arr2, int row1, int row2, int col1, int col2) {
+    static void multiply(int[][] arr1, int[][] arr2, int row1, int row2, int col1, int col2) {
 
         int[][] result = new int[row1][col2];
 
@@ -31,12 +31,12 @@ public class matrix_multiplication {
                 for (int k = 0; k < col1; k++) {
                     result[i][j] += arr1[i][k] * arr2[k][j];
                 }
-                System.out.println();
+                System.out.print(result[i][j] + " ");
             }
             System.out.println();
         }
 
-        return result;
+
     }
 
     public static void main(String[] args) {
@@ -59,9 +59,7 @@ public class matrix_multiplication {
 
         int[][] matrix2 = matrix(row2, col2);
 
-        int[][] result = multiply(matrix1, matrix2, row1, row2, col1, col2);
-
-        System.out.println(Arrays.toString(result));
+        multiply(matrix1, matrix2, row1, row2, col1, col2);
 
 
     }
