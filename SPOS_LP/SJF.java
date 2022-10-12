@@ -1,4 +1,4 @@
-package CPU_Scheduling;
+package SPOS_LP;
 
 import java.util.Scanner;
 
