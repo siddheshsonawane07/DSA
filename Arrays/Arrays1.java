@@ -10,7 +10,7 @@ public class Arrays1 {
         // syntax
         // datatype[] variable_name = new datatype[size];
 
-        int[] arr = {5, 4, 3, 2, 1};
+        int[] arr = {6 ,5, 4, 3, 2, 1};
 
         //find minimum and max in array
 
