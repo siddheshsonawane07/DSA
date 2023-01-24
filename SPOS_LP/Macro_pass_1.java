@@ -3,6 +3,7 @@ package SPOS_LP;
 import java.util.*;
 import java.io.*;
 
+
 class Macro_pass_1 {
     static String mnt[][] = new String[5][3]; //assuming 5 macros in 1 program
     static String ala[][] = new String[10][2]; //assuming 2 arguments in each macro
@@ -24,11 +25,12 @@ class Macro_pass_1 {
         System.out.println("\n");
     }
 
+
     static void pass1() {
         int index = 0, i;
         String s, prev = "", substring;
         try {
-            BufferedReader inp = new BufferedReader(new FileReader("input.txt"));
+            BufferedReader inp = new BufferedReader(new FileReader("F:\\JAVA DSA\\src\\SPOS_LP\\input.txt"));
             File op = new File("pass1_output.txt");
             if (!op.exists())
                 op.createNewFile();

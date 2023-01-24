@@ -2,7 +2,7 @@ package SPOS_LP;
 
 import java.util.*;
 
-public class rename {
+public class cpu {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
@@ -15,7 +15,7 @@ public class rename {
             System.out.println("Input " + i);
             arr[i] = in.nextInt();
         }
-        System.out.println("Enter 1 for FIF");
+        System.out.println("Enter 1 for FIFO");
         System.out.println("Enter 2 fdr LRU");
         System.out.println("Enter 3 for Optimal");
         System.out.print("Your Choice:  ");
