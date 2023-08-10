@@ -1,14 +1,17 @@
 package Sorting;
 import java.util.Arrays;
 
-public class QuickSort {
-    public static void main(String[] args) {
-        int [] arr = {5,4,3,2,1};
-        quickSort(arr,0,arr.length-1);
-        System.out.println(Arrays.toString(arr));
-    }
-}
 
+class QuickSort {
+    public static void main(String[] args) {
+        int [] arr = {7,6,4,2, 2,1,-4};
+        quickSort(arr,0,arr.length-1);
+        for(int element: arr){
+            System.out.print(element + " ");
+        }
+    }
+    
+    
 public static void quickSort(int [] arr, int s, int e){
   if(s>=e){
     return;
@@ -20,34 +23,28 @@ public static void quickSort(int [] arr, int s, int e){
 
 }
 
-public static swap(int [] arr, int a, int b){
-  int temp = arr[a];
-  arr[a] = arr[b];
-  arr[b] = temp;
-}
-
 public static int partition(int [] arr, int s, int e){
 
   int pivot = arr[s];
 
   int count = 0;
 
-  for(int i = s+1; s<=e; i++){
-      if(arr[i] <= pivot{
+  for(int i = s; i<=e; i++){
+      if(arr[i] <= pivot){
         count++;
       }
   }
 
-  int pivotIndex = s + count;
+  int pivotIndex = s + count - 1;
   swap(arr, pivotIndex, s);
   int i = s, j = e;
 
   while(i<pivotIndex && j>pivotIndex){
 
-    while(arr[i] < pivot){
+    while(arr[i] <= pivot){
       i++;
     }
-    while(arr[j] < pivot){
+    while(arr[j] > pivot){
       j--;
     }
 
@@ -55,6 +52,14 @@ public static int partition(int [] arr, int s, int e){
       swap(arr, i, j);
       i++;
       j--;
+    }
   }
+   return pivotIndex;
+ }
+ 
+ public static void swap(int [] arr, int a, int b){
+  int temp = arr[a];
+  arr[a] = arr[b];
+  arr[b] = temp;
 }
 }
