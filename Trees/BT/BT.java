@@ -289,70 +289,96 @@ public class BT {
         rightview(node.left, right, currDepth + 1);
     }
 
+    static int diameter;
+    public static int calculateDiameter(Node node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int leftHeight = calculateDiameter(node.left);
+        int rightHeight = calculateDiameter(node.right);
+
+        diameter = Math.max(diameter, leftHeight + rightHeight);
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
 
     public static void main(String[] args) {
+//
+//        sc = new Scanner(System.in);
+//
+//        Node root = createTree();
+//        System.out.print("inorder: ");
+//        inOrder(root);
+//        System.out.println();
+//        System.out.print("preorder: ");
+//        preOrder(root);
+//        System.out.println();
+//        System.out.print("postorder: ");
+//        postOrder(root);
+//        System.out.println();
+//
+//        int height = height(root);
+//        System.out.println("height of tree is " + height);
+//
+//        int dfs = dfsHeight(root);
+//        System.out.println("is it a balanced tree: " + dfs);
+//
+//        int size = size(root);
+//        System.out.println("size of tree is " + size);
+//
+//        int max = max(root);
+//        System.out.println("max in tree is " + max);
+//
+//        int min = min(root);
+//        System.out.println("min in tree is " + min);
+//
+//        int sum = sum(root);
+//        System.out.println("sum of the nodes " + sum);
+//
+//        System.out.println("Level order traversal bruteforce approach: ");
+//        printLevelOrder(root);
+//
+//        System.out.println();
+//
+//        System.out.println("Level order traversal using queue: ");
+//        printLevelTraversal(root);
+//
+//        System.out.println("Zigzag traversal using queue: ");
+//        printSpiralTraversal(root);
+//
+//        System.out.println();
+//
+//        System.out.println("Boundary Traversal anticlockwise: ");
+//        printBoundaryTraversalAnticlockwise(root);
+//
+//        System.out.println();
+//
+//
+//        List<Integer> right = new ArrayList<Integer>();
+//        System.out.println("right view of binary tree");
+//        rightview(root, right, 0);
+//        System.out.println(right);
+//
+//        System.out.println();
+//
+//        List<Integer> left = new ArrayList<Integer>();
+//        System.out.println("left view of binary tree");
+//        leftview(root, left, 0);
+//        System.out.println(left);
+
+
+
 
         sc = new Scanner(System.in);
 
         Node root = createTree();
-        System.out.print("inorder: ");
-        inOrder(root);
-        System.out.println();
-        System.out.print("preorder: ");
-        preOrder(root);
-        System.out.println();
-        System.out.print("postorder: ");
-        postOrder(root);
-        System.out.println();
 
-        int height = height(root);
-        System.out.println("height of tree is " + height);
+        diameter = 0;
+        int ans = calculateDiameter(root);
+        System.out.println(diameter);
 
-        int dfs = dfsHeight(root);
-        System.out.println("is it a balanced tree: " + dfs);
-
-        int size = size(root);
-        System.out.println("size of tree is " + size);
-
-        int max = max(root);
-        System.out.println("max in tree is " + max);
-
-        int min = min(root);
-        System.out.println("min in tree is " + min);
-
-        int sum = sum(root);
-        System.out.println("sum of the nodes " + sum);
-
-        System.out.println("Level order traversal bruteforce approach: ");
-        printLevelOrder(root);
-
-        System.out.println();
-
-        System.out.println("Level order traversal using queue: ");
-        printLevelTraversal(root);
-
-        System.out.println("Zigzag traversal using queue: ");
-        printSpiralTraversal(root);
-
-        System.out.println();
-
-        System.out.println("Boundary Traversal anticlockwise: ");
-        printBoundaryTraversalAnticlockwise(root);
-
-        System.out.println();
-
-
-        List<Integer> right = new ArrayList<Integer>();
-        System.out.println("right view of binary tree");
-        rightview(root, right, 0);
-        System.out.println(right);
-
-        System.out.println();
-
-        List<Integer> left = new ArrayList<Integer>();
-        System.out.println("left view of binary tree");
-        leftview(root, left, 0);
-        System.out.println(left);
 
 
     }
