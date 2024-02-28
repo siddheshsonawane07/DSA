@@ -4,7 +4,7 @@ public class FibonacciSequence{
 
   public static void main(String[] args){
 
-    Scanner in = new Scanner(System.in);
+   Scanner in = new Scanner(System.in);
 
     int n = in.nextInt();
 
@@ -13,9 +13,9 @@ public class FibonacciSequence{
     
     System.out.print(a + " " + b);
 
-    for(int i = 2 i < n; i++){
+    for(int i = 2; i < n; i++){
       int temp = a + b;
-      System.out.print(temp):
+      System.out.print(" " + temp);
       a = b;
       b = temp;
     } 
